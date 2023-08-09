@@ -1,0 +1,24 @@
+<!-- users.ejs -->
+<%- include('header',{title:"Users"}) %>
+    <h1>User List</h1>
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.name %> </td>
+            <td><%= user.age %></td>
+            <td><a href="/edit/<%= user.id %>">Edit</a></td>
+            <td><a href="/delete/<%= user.id %>">Delete</a></td>
+        </tr>
+        <% }); %>
+   
+    </table>
+    
+    
+<%- include('footer') %>
